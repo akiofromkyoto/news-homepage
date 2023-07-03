@@ -14,9 +14,14 @@ export default function Navbar() {
             </div>
             <div className="flex items-center">
                 <button 
+                    id='menu'
                     data-collapse-toggle="navbar-default"
                     type='button'
                     className='hidden mobile:block'
+                    onClick={() => {
+                        setOpenModalAdicionarAdministrador(true)
+                      }}
+          
                 >
                     <img src={IconeMenu} />
                 </button>
@@ -57,9 +62,12 @@ export default function Navbar() {
                     </NavLink>
                 </div>
             </div>
-            <Menu>
+            <Menu
             isOpen={openModalAdicionarAdministrador}
             setModalOpen={() => setOpenModalAdicionarAdministrador(!openModalAdicionarAdministrador)}
+    
+            >
+                
 
             </Menu>
         </div>
